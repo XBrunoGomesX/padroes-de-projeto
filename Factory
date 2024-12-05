@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 class Creator(ABC):
 
-    
+    @abstractmethod
     def factory(self):
         pass
 
@@ -31,6 +31,7 @@ class ConcreteCreator2(Creator):
 
 class Product(ABC):
 
+    @abstractmethod
     def operation(self) -> str:
         pass
 
