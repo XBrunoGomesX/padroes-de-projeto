@@ -28,6 +28,7 @@ git push origin minha-nova-funcionalidade
 7 - **Abra um Pull Request**:
 - Acesse o repositório original.
 - Clique em "Pull Request".
+- O nome do PR deve ser o que ele quer implementar por exemplo: "Implementação do padrão de projeto X"
 - Preencha as informações do PR com uma descrição clara do que foi feito.
 
 # Abrir Issue
