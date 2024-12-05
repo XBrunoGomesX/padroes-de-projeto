@@ -33,7 +33,8 @@ Código com comentários:
         Essa classe é responsável por definir a interface que contém um método concreto some_operation, 
         que utiliza o produto retornado pelo método abstrato factory.
         """
-        
+
+        @abstractmethod
         def factory(self):
             """
             Será usado para criar objetos do tipo 'Product'.
@@ -76,7 +77,8 @@ Código com comentários:
         """
         Interface base para os produtos.
         """
-    
+
+        @abstractmethod   
         def operation(self) -> str:
             pass
     
