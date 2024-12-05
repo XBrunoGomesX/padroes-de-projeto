@@ -1,21 +1,76 @@
-# padroes-de-projeto 
+# Padrão Proxy
 
-## Descrição 
-O objetivo desse projeto é mostrar um pouco sobre alguns padrões de projeto sendo eles:
+## Conceito
+O padrão Proxy fornece um substituto ou marcador para controlar o acesso a outro objeto. Ele é usado para adicionar uma camada de controle entre o cliente e o recurso.
 
- - **Observer**: é um padrão de projeto _**comportamental**_ que permite que você defina um mecanismo de assinatura para notificar múltiplos objetos sobre quaisquer eventos que aconteçam com o objeto que eles estão observando
- - **Adapter**: é um padrão de projeto _**estrutural**_ que permite objetos com interfaces incompatíveis colaborarem entre si.
- - **Proxy**: é um padrão de projeto _**estrutural**_ que permite que você forneça um substituto ou um espaço reservado para outro objeto. Um proxy controla o acesso ao objeto original, permitindo que você faça algo ou antes ou depois do pedido chegar ao objeto original.
- - **Factory**: é um padrão _**criacional**_ de projeto que fornece uma interface para criar objetos em uma superclasse, mas permite que as subclasses alterem o tipo de objetos que serão criados.
+## Problema que Resolve
+- Reduz o custo de acessar objetos caros, como imagens ou conexões de rede.
+- Protege recursos sensíveis de acessos não autorizados.
+- Permite realizar operações adicionais antes ou depois do acesso ao recurso.
 
-Link para as diretrizes do projeto: [CONTRIBUTING.md](CONTRIBUTING.md)
+## Quando Usar
+- Quando o custo de criação ou inicialização do objeto é alto.
+- Para controlar o acesso a recursos sensíveis.
+- Para encapsular operações adicionais relacionadas ao acesso do cliente ao objeto.
 
-## Contribuidores
+## Diagrama UML
+![proxy-diagram](https://github.com/user-attachments/assets/bc840ccd-a441-4c73-a44b-2579a1d607d3)
 
-@XBrunoGomesX
 
-@PedroBorges0
+## Exemplo de Código
+from abc import ABC, abstractmethod
 
-@JoaoP55
+# Interface Comum: Define os métodos que o Proxy e o Objeto Real devem implementar.
+class Image(ABC):
+    @abstractmethod
+    def display(self):
+        pass
 
-@DanielSuzuki1
+# Objeto Real: Contém a lógica principal, como carregar e exibir a imagem.
+class RealImage(Image):
+    def __init__(self, filename):
+        self.filename = filename
+        self.load_from_disk()  # Simula o carregamento do recurso.
+
+    def load_from_disk(self):
+        print(f"Carregando imagem {self.filename} do disco...")
+
+    def display(self):
+        print(f"Exibindo imagem {self.filename}")
+
+# Proxy: Controla o acesso ao Objeto Real, carregando-o somente quando necessário.
+class ImageProxy(Image):
+    def __init__(self, filename):
+        self.filename = filename
+        self.real_image = None  # O objeto real só será inicializado sob demanda.
+
+    def display(self):
+        # Lazy loading: O Objeto Real só é criado no primeiro uso.
+        if self.real_image is None:
+            print(f"Inicializando o proxy para carregar a imagem {self.filename}.")
+            self.real_image = RealImage(self.filename)
+        self.real_image.display()
+
+# Uso do padrão Proxy
+if __name__ == "__main__":
+    # Criando o proxy, mas sem carregar a imagem do disco.
+    image = ImageProxy("foto.jpg")
+    print("Imagem criada, mas ainda não carregada do disco.")
+
+    # A imagem será carregada e exibida na primeira chamada ao método display.
+    image.display()
+
+    # Na segunda chamada, a imagem já está carregada, então o proxy apenas delega.
+    image.display()
+
+
+## Vantagens
+- Reduz o uso de recursos desnecessários.
+- Fornece controle adicional sobre o acesso aos objetos.
+- Promove a separação de responsabilidades.
+
+## Desvantagens
+- Pode adicionar complexidade ao sistema.
+- Introduz uma camada adicional de indireção.
+
+
