@@ -1,0 +1,41 @@
+#implementando um Proxy para um sistema que carrega imagens. O Proxy só carregará a imagem do disco quando necessário.
+
+Arquivo: proxy/ImageProxy.py
+
+from abc import ABC, abstractmethod
+
+# Primeira parte - Interface comum
+class Image(ABC):
+    @abstractmethod
+    def display(self):
+        pass
+
+# Segunda parte - Objeto Real
+class RealImage(Image):
+    def __init__(self, filename):
+        self.filename = filename
+        self.load_from_disk()
+
+    def load_from_disk(self):
+        print(f"Carregando imagem {self.filename} do disco...")
+
+    def display(self):
+        print(f"Exibindo imagem {self.filename}")
+
+# Terceira parte - Proxy
+class ImageProxy(Image):
+    def __init__(self, filename):
+        self.filename = filename
+        self.real_image = None
+
+    def display(self):
+        if self.real_image is None:
+            self.real_image = RealImage(self.filename)  # Carregamento tardio
+        self.real_image.display()
+
+# Quarta parte - Uso
+if __name__ == "__main__":
+    image = ImageProxy("foto.jpg")
+    print("Imagem criada, mas ainda não carregada do disco.")
+    image.display()  # A imagem será carregada aqui
+    image.display()  # Aqui, a imagem já está carregada
