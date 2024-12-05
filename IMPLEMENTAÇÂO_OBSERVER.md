@@ -1,3 +1,10 @@
+# Padrão de Design: Observer
+
+## O Observer é um padrão de design comportamental que define um mecanismo de assinatura, 
+## permitindo que múltiplos objetos sejam notificados sobre eventos ocorridos em um objeto observado.
+## Quando o estado do objeto observado muda, todos os objetos que se inscreveram (observadores) são atualizados automaticamente.
+
+
 interface Observer {
   update(data: any): void;
 }
