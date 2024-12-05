@@ -8,7 +8,7 @@ O objetivo desse projeto é mostrar um pouco sobre alguns padrões de projeto se
  - **Proxy**: é um padrão de projeto _**estrutural**_ que permite que você forneça um substituto ou um espaço reservado para outro objeto. Um proxy controla o acesso ao objeto original, permitindo que você faça algo ou antes ou depois do pedido chegar ao objeto original.
  - **Factory**: é um padrão _**criacional**_ de projeto que fornece uma interface para criar objetos em uma superclasse, mas permite que as subclasses alterem o tipo de objetos que serão criados.
 
-Link para as diretrizes do projeto:
+Link para as diretrizes do projeto: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Contribuidores
 
