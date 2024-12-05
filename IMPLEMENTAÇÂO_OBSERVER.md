@@ -4,7 +4,7 @@
 ## permitindo que múltiplos objetos sejam notificados sobre eventos ocorridos em um objeto observado.
 ## Quando o estado do objeto observado muda, todos os objetos que se inscreveram (observadores) são atualizados automaticamente.
 
-
+```
 interface Observer {
   update(data: any): void;
 }
@@ -48,7 +48,7 @@ subject.subscribe(observerA);
 subject.subscribe(observerB);
 
 subject.notify('Nova notificação!');
-
+```
 # Este código implementa o padrão de design Observer, que resolve os seguintes problemas:
 
 ## Comunicação desacoplada entre objetos:
