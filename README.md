@@ -121,6 +121,10 @@ Código com comentários:
 
 ______________________________________________________________________________________________________________________________
 
+UML:
+
+https://github.com/user-attachments/assets/2763ff17-7c01-4e2c-acd7-abfae9d71d8b
+
 Vantagens e Desvantagens:
 
 Vantagens: 
