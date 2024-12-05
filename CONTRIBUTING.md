@@ -45,10 +45,12 @@ git push origin minha-nova-funcionalidade
 # Padrões de Estilo de Código
 Siga estas convenções para manter o código consistente:
 - O código sera em **Python**.
-- Sempre use nomes de variáveis e funções em **inglês** e que fça sentido com o que ele faz em si por exemplo:
+- Sempre use nomes de variáveis e funções em **inglês** e que faça sentido com o que ele faz por exemplo:
+
+  _Obs: Comentarios podem ser em português_
   ```
    def calculate_sum():
-    #Asks the user for two numbers, calculates their sum, and displays the result.
+    # Asks the user for two numbers, calculates their sum, and displays the result.
     # Ask the user for two numbers
     number1 = float(input("Enter the first number: "))
     number2 = float(input("Enter the second number: "))
