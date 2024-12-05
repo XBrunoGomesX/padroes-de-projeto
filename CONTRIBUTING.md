@@ -8,7 +8,7 @@ Clique no botão "Fork" no canto superior direito da página do repositório.
 ```
    git clone https://github.com/seu-usuario/nome-do-projeto.git
 ```
-3 - **Crie uma branch para suas alterações**: _Nomeie a branch de forma descritiva_
+3 - **Crie uma branch para suas alterações**: _Nomeie a branch de forma que esteja associada com a issue_
 ```
   git checkout -b minha-nova-funcionalidade
 ```
@@ -28,7 +28,6 @@ git push origin minha-nova-funcionalidade
 7 - **Abra um Pull Request**:
 - Acesse o repositório original.
 - Clique em "Pull Request".
-- O nome do PR deve ser o que ele quer implementar por exemplo: "Implementação do padrão de projeto X"
 - Preencha as informações do PR com uma descrição clara do que foi feito.
 
 # Abrir Issue
@@ -40,6 +39,7 @@ git push origin minha-nova-funcionalidade
 
 # Requisitos para Pull Requests
 - Teste suas alterações antes de enviar o PR.
+- O nome do PR deve ser o que ele quer implementar por exemplo: "Implementação do padrão de projeto X"
 - Certifique-se de que suas alterações não quebram funcionalidades existentes.
 - Inclua testes para novas funcionalidades, se aplicável.
 
