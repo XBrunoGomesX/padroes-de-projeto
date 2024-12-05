@@ -6,7 +6,7 @@ Aqui está um exemplo de "README.md" para o seu projeto:
 
 # Projeto - Padrão Observer
 
-Este projeto implementa o **padrão de design Observer** em TypeScript. O padrão Observer permite que múltiplos objetos (observers) sejam notificados sobre mudanças de estado em um objeto central (subject) de forma desacoplada, sem que o objeto central precise saber detalhes sobre os observers. Isso melhora a flexibilidade e escalabilidade do sistema, tornando-o mais modular.
+Este projeto implementa o **padrão de design Observer** em Python. O padrão Observer permite que múltiplos objetos (observers) sejam notificados sobre mudanças de estado em um objeto central (subject) de forma desacoplada, sem que o objeto central precise saber detalhes sobre os observers. Isso melhora a flexibilidade e escalabilidade do sistema, tornando-o mais modular.
 
 ## Descrição
 
